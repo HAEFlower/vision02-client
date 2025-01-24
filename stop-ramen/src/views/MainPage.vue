@@ -24,7 +24,7 @@ import SelectOptionPage from './SelectOptionPage.vue';
     height: 100%;
 }
 .header {
-    padding: 20px 20px 15px 25px;
+    padding: 0px 20px 15px 25px;
     display: flex;
     flex-direction: row;
     align-items: center;

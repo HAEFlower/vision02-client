@@ -27,7 +27,7 @@ const setTab = (name) => {
     background-color: #FFFFFF;
     border-radius: 13px;
     width: 100%;
-    padding: 12px 35px 12px 35px;
+    padding: 8px 35px 12px 35px;
     overflow: hidden;
     box-shadow: 0 3px 6px rgba(0,0,0,0.06), 0 3px 6px rgba(0,0,0,0.09);
 }
