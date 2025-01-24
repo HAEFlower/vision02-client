@@ -1,10 +1,6 @@
 <template>
-    <!-- <v-app light>
-          <RouterView :data="data" />
-    </v-app> -->
     <div>
-    
-        <RouterView :data="data" />
+        <RouterView/>
     </div>
 </template>
 
@@ -15,7 +11,7 @@
 <style>
 #app {
     background-color: #F2F2F2;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
 }
 

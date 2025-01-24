@@ -19,6 +19,10 @@ import SelectOptionPage from './SelectOptionPage.vue';
 </script>
 
 <style>
+.container {
+    width: 100%;
+    height: 100%;
+}
 .header {
     padding: 20px 20px 15px 25px;
     display: flex;
@@ -32,6 +36,6 @@ import SelectOptionPage from './SelectOptionPage.vue';
     font-weight: 600;
 }
 .content {
-    padding: 16px;
+    padding: 10px;
 }
 </style>
