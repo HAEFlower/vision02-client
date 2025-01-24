@@ -1,7 +1,11 @@
 <template>
-    <v-app>
-      <RouterView :data="data" />
-    </v-app>
+    <!-- <v-app light>
+          <RouterView :data="data" />
+    </v-app> -->
+    <div>
+    
+        <RouterView :data="data" />
+    </div>
 </template>
 
 <script setup>
@@ -10,9 +14,9 @@
 
 <style>
 #app {
-    font-family: Avenir, Helvetica, Arial, sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-align: center;
+    background-color: #F2F2F2;
+    width: 100%;
+    height: 100vh;
 }
+
 </style>

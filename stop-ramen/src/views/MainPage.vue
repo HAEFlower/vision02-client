@@ -1,24 +1,37 @@
 <template>
-    <v-layout class="container">    
-        <v-main class="d-flex align-center justify-center" style="min-height: 120px;">
-            Main Content
-        </v-main>
-    </v-layout>
+    <div class="container">
+        <div class="header">
+            <img :src="logo" alt="메인로고" />
+            <div class="header-title">라면그만</div>
+        </div>
+        
+        <div class="content">
+            <TopBar/>
+            <SelectOptionPage />
+        </div>
+    </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
-import { useDisplay } from 'vuetify'
-
-const { mobile } = useDisplay()
-
-onMounted(() => {
-    console.log(mobile.value) // false
-})
+import TopBar from '@/components/TopBar.vue';
+import logo from '@/assets/ramen-logo.svg';
+import SelectOptionPage from './SelectOptionPage.vue';
 </script>
 
 <style>
-.container {
-    background-color: #F2F2F2;
+.header {
+    padding: 20px 20px 15px 25px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.header-title {
+    font-size: 23px;
+    margin-left: 10px;
+    font-weight: 600;
+}
+.content {
+    padding: 16px;
 }
 </style>
