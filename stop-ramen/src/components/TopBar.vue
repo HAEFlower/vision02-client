@@ -19,7 +19,7 @@ const setTab = (name) => {
 
 </script>
 
-<style>
+<style scoped>
 .topbar-container {
     display: flex;
     justify-items: center;
