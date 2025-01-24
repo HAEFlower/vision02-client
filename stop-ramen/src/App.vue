@@ -1,9 +1,5 @@
 <template>
-    <!-- <v-app light>
-          <RouterView :data="data" />
-    </v-app> -->
     <div>
-    
         <RouterView :data="data" />
     </div>
 </template>

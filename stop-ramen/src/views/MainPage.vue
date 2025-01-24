@@ -32,6 +32,6 @@ import SelectOptionPage from './SelectOptionPage.vue';
     font-weight: 600;
 }
 .content {
-    padding: 16px;
+    padding: 10px;
 }
 </style>
