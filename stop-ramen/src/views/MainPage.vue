@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="main-container">
         <div class="header">
             <img :src="logo" alt="메인로고" />
             <div class="header-title">라면그만</div>
@@ -18,13 +18,13 @@ import logo from '@/assets/ramen-logo.svg';
 import SelectOptionPage from './SelectOptionPage.vue';
 </script>
 
-<style>
-.container {
+<style scoped>
+.main-container {
     width: 100%;
     height: 100%;
 }
 .header {
-    padding: 0px 20px 15px 25px;
+    padding: 15px 20px 15px 25px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -36,6 +36,6 @@ import SelectOptionPage from './SelectOptionPage.vue';
     font-weight: 600;
 }
 .content {
-    padding: 10px;
+    padding: 5px;
 }
 </style>

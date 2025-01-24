@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="question-container">
         <div class="first-question">
             <div class="title">원하는 요리의 형태를 선택하세요</div>
             <div class="option-container">
@@ -41,13 +41,13 @@ const clickPurposeLabel = (label) => {
 }
 </script>
 
-<style>
-.container {
+<style scoped>
+.question-container {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 100%;
-    padding-inline: 20px;
+    padding-inline: 40px;
 }
 
 .title {
@@ -65,6 +65,9 @@ const clickPurposeLabel = (label) => {
     margin: 5px;
 }
 
+.first-question {
+    margin-top: 30px;
+}
 .second-question {
     margin-top: 50px;
 }

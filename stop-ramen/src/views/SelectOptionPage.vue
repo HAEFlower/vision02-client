@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="option-container">
         <UploadBox v-model="imageData" />
         <QuestionBox/>
         <div class="btn-container">
@@ -17,8 +17,8 @@ const imageData = ref();
 console.log("imageData::", imageData)
 </script>
 
-<style>
-.container {
+<style scoped>
+.option-container {
     margin-top: 30px;
     justify-content: space-around;
 }
@@ -43,7 +43,7 @@ console.log("imageData::", imageData)
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 16rem;
     width: 60%;
     height: 50px;
     font-size: 20px;
