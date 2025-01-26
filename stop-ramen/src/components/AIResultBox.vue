@@ -1,5 +1,5 @@
 <template>
-    <div class="result-box-container">
+    <div @click="goToRecipeDetailPage" class="result-box-container">
         <div class="result-box-header">
             <img :src="headerIcon" class="icon" width="20px" height="20px" />
             <div class="result-title">{{ props.recipeName }}</div>
@@ -13,6 +13,8 @@
 
 <script setup>
 import headerIcon from '@/assets/food-icon.png'
+import { usePageStore } from '../stores/PageStore';
+import { useRouter } from 'vue-router'; 
 
 const props = defineProps({
     recipeName: {
@@ -20,6 +22,15 @@ const props = defineProps({
         default: ""
     }
 })
+
+const store = usePageStore(); 
+const router = useRouter();
+
+const goToRecipeDetailPage = () => {
+    store.setCurrentPage('RECIPE_DETAIL'); 
+    store.selectedRecipeName = props.recipeName;
+    router.push('/recipe-detail');
+}
 </script>
 
 <style scoped>
@@ -32,6 +43,7 @@ const props = defineProps({
     margin-bottom: 10px;
     justify-content: space-between;
     padding: 13px 14px;
+    cursor: pointer;
 }
 
 .result-box-header {

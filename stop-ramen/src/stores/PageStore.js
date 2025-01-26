@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 export const usePageStore = defineStore('page', {
   state: () => ({
     currentPage: 'SELECT_OPTION',
+    selectedRecipeName: '',
   }),
   actions: {
     setCurrentPage(page) {
@@ -14,8 +15,8 @@ export const usePageStore = defineStore('page', {
           return '/ai-result'
         case 'SELECT_OPTION':
           return '/select-option'
-        case 'AI_RESULT_DETAIL':
-          return '/ai-detail'
+        case 'RECIPE_DETAIL':
+          return '/recipe-detail'
         default:
           return '/select-option'
       }

@@ -1,7 +1,7 @@
 <template>
     <div class="result-container">
         <div class="result-header">
-            <img :src="backIcon" class="back-icon" width="28px" height="28px" />
+            <img @click="goBack" :src="backIcon" class="back-icon" width="28px" height="28px" />
             <div class="result-title">AI 추천 결과</div>
         </div>
         <div class="result-content">
@@ -18,6 +18,13 @@
 import AIResultBox from '@/components/AIResultBox.vue';
 import { resultData } from '@/services/dummydata';
 import backIcon from '../assets/ramen-arrow.svg';
+import { useRouter } from 'vue-router'; 
+
+const router = useRouter();
+
+const goBack = () => {
+    router.back(); 
+}
 </script>
 
 <style scoped>
