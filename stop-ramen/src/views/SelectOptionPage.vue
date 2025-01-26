@@ -3,18 +3,27 @@
         <UploadBox v-model="imageData" />
         <QuestionBox/>
         <div class="btn-container">
-            <button class="btn">추천받기</button>
+            <button class="btn" @click="goToRecommendResult">추천받기</button>
         </div>
     </div>
 </template>
 
 <script setup>
 import { ref } from "vue";
+import { usePageStore } from '../stores/PageStore';
 import UploadBox from '@/components/UploadBox.vue';
 import QuestionBox from "@/components/QuestionBox.vue";
+
 const imageData = ref();
+const store = usePageStore(); 
+
+const goToRecommendResult = () => {
+    store.setCurrentPage('AI_RESULT'); 
+}
 
 console.log("imageData::", imageData)
+
+
 </script>
 
 <style scoped>
