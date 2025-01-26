@@ -24,7 +24,7 @@
 
 <script setup>
 import { ref } from "vue";
-import data from '@/services/dummydata.js';
+import {data} from '@/services/dummydata.js';
 import OptionLabel from './OptionLabel.vue';
 
 const selectedTypeLabel = ref(null);

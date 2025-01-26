@@ -1,11 +1,22 @@
 <template>
     <div>
-        <RouterView/>
+        <RouterView :key="currentRoute" />
     </div>
 </template>
 
 <script setup>
+import { computed, watch } from 'vue';
+import { usePageStore } from './stores/PageStore';
+import { useRouter } from 'vue-router';
 
+const store = usePageStore();
+const router = useRouter();
+
+const currentRoute = computed(() => store.getCurrentRoute());
+
+watch(currentRoute, (newRoute) => {
+    router.push(newRoute);
+});
 </script>
 
 <style>
@@ -14,5 +25,4 @@
     width: 100vw;
     height: 100vh;
 }
-
 </style>
