@@ -1,6 +1,6 @@
 import { createWebHistory, createRouter } from 'vue-router'
 import MainPage from '../views/MainPage.vue'
-import RecommendResultPage from '@/views/AIResultPage.vue'
+import AIResultPage from '@/views/AIResultPage.vue'
 import SelectOptionPage from '@/views/SelectOptionPage.vue'
 import RecipeDetailPage from '@/views/RecipeDetailPage.vue'
 
@@ -10,7 +10,7 @@ const router = createRouter({
     { path: '/', component: MainPage },
     {
       path: '/ai-result',
-      component: RecommendResultPage,
+      component: AIResultPage,
       props: true,
     },
     {
