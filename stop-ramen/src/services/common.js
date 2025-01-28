@@ -2,7 +2,7 @@ import axios from 'axios'
 
 function createInstance() {
   const instace = axios.create({
-    baseURL: import.meta.env.VITE_BASE_URL,
+    baseURL: `${import.meta.env.VITE_BASE_URL}/api/image/`,
   })
 
   return setInterceptor(instace)
@@ -12,6 +12,7 @@ export function setInterceptor(instance) {
   // request
   instance.interceptors.request.use(
     (config) => {
+      config.headers['Access-Control-Allow-Origin'] = '*'
       return config
     },
     (error) => Promise.reject(error),
