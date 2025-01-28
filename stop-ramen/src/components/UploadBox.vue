@@ -1,11 +1,9 @@
 <template>
     <div class="upload-container">
-        <!-- 이미지 업로드 버튼 -->
         <div class="uploadButton" v-if="!modelValue" @click="triggerFileInput">
             <img :src="uploadIcon" alt="이미지 업로드" class="img" />
         </div>
     
-        <!-- 업로드된 이미지 미리보기 -->
         <div class="uploadImage" v-else @mouseover="hover = true" @mouseleave="hover = false">
             <img :src="thumbnailImage" alt="Uploaded Image" class="preview-img" :class="{ hovered: hover }" />
             <div class="deleteIcon">
@@ -13,7 +11,6 @@
             </div>
         </div>
     
-        <!-- 숨겨진 파일 입력 -->
         <input ref="fileInput" type="file" @change="handleFileChange" accept="image/*" style="display: none" />
     </div>
 </template>
