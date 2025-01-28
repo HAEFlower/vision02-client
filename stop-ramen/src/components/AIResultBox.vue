@@ -5,7 +5,7 @@
             <div class="result-title">{{ props.recipeName }}</div>
         </div>
         <div class="result-box-content">
-            <div class="result-box-time">15분</div>
+            <div class="result-box-time">{{ props.cookingTime }}</div>
             <div class="recipe-btn">> 레시피 확인하기</div>
         </div>
     </div>
@@ -20,17 +20,26 @@ const props = defineProps({
     recipeName: {
         type: String,
         default: ""
+    },
+    cookingTime: {
+        type: String,
+        default: ""
     }
 })
 
 const store = usePageStore(); 
 const router = useRouter();
 
+const recipe = store.pageData.recipes.find(item => item.recipeTitle === props.recipeName);
+
 const goToRecipeDetailPage = () => {
-    store.setCurrentPage('RECIPE_DETAIL'); 
+    store.setCurrentPage('RECIPE_DETAIL', recipe); 
     store.selectedRecipeName = props.recipeName;
+    console.log("recipe::", recipe)
     router.push('/recipe-detail');
+
 }
+
 </script>
 
 <style scoped>

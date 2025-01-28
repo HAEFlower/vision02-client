@@ -10,12 +10,13 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, defineEmits } from "vue";
 
+const emit = defineEmits(["tabStatus"]);
 const tabName = ref("refrigeratorAI");
 const setTab = (name) => {
     tabName.value = name;
-    console.log("tabName::", tabName.value)
+    emit("tabStatus", tabName.value);
 
 }
 </script>

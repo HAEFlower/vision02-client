@@ -6,8 +6,8 @@
         </div>
         <div class="result-content">
             <div class="result-desc">회원님이 가지고 있는 재료로 손쉽게 만들 수 있어요</div>
-            <div v-for="(recipe, index) in resultData" :key="index" class="result-item">
-                <AIResultBox :recipeName="recipe.recipeTitle" />
+            <div v-for="(recipe, index) in recipeData" :key="index" class="result-item">
+                <AIResultBox :recipeName="recipe.recipeTitle" :cookingTime="recipe.cookingTime"/>
             </div>
         </div>
     
@@ -16,15 +16,19 @@
 
 <script setup>
 import AIResultBox from '@/components/AIResultBox.vue';
-import { resultData } from '@/services/dummydata';
 import backIcon from '../assets/ramen-arrow.svg';
 import { useRouter } from 'vue-router'; 
+import { usePageStore } from '../stores/PageStore';
 
+const store = usePageStore();
 const router = useRouter();
 
 const goBack = () => {
     router.back(); 
 }
+
+const recipeData = store.pageData.recipes; 
+console.log("recipeData::", recipeData);
 </script>
 
 <style scoped>

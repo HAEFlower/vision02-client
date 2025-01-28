@@ -1,21 +1,34 @@
 import axios from 'axios'
 
-const baseUrl = import.meta.env.VITE_API_URL
-
-// axios 공통 설정
-export const apiInstance = axios.create({
-  baseURL: baseUrl,
-  header: {
-    'Content-Type': 'application/json',
-  },
-})
-
-// apiInstance 이용해서 인터셉터 구현 예정
-
 function createInstance() {
-  return axios.create({
-    baseURL: import.meta.env.VITE_API_URL,
+  const instace = axios.create({
+    baseURL: import.meta.env.VITE_BASE_URL,
   })
+
+  return setInterceptor(instace)
 }
 
-export const instance = createInstance()
+export function setInterceptor(instance) {
+  // request
+  instance.interceptors.request.use(
+    (config) => {
+      return config
+    },
+    (error) => Promise.reject(error),
+  )
+
+  // response
+  instance.interceptors.response.use(
+    function (response) {
+      console.log('response::', response)
+      return response
+    },
+    async (error) => {
+      return Promise.reject(error)
+    },
+  )
+
+  return instance
+}
+
+export const api = createInstance()

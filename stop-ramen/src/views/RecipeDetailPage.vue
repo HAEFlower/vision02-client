@@ -21,6 +21,7 @@ const router = useRouter();
 const goBack = () => {
     router.back(); 
 }
+
 </script>
 
 <style scoped>

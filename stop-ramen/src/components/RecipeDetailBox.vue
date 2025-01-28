@@ -1,18 +1,18 @@
 <template>
     <div class="detail-box-container">
         <div class="detail-header">
-            <div class="detail-title">{{  recipeDetail.recipeTitle }}</div>
-            <div class="detail-desc">{{ recipeDetail.recipeDesc }}</div>
+            <div class="detail-title">{{  selectedRecipe.recipeTitle }}</div>
+            <div class="detail-desc">{{ selectedRecipe.recipeDesc }}</div>
         </div>
     
         <div class="detail-content">
             <div class="detail-subtitle">재료</div>
-            <div v-for="(recipe, index) in recipeDetail.ingredientsUsed" :key="index" class="detail-item">
+            <div v-for="(recipe, index) in selectedRecipe.ingredientsUsed" :key="index" class="detail-item">
                 <div>⚫️ {{ recipe }}</div>
             </div>
     
             <div class="detail-subtitle">조리방법</div>
-            <div v-for="(recipe, index) in recipeDetail.steps" :key="index" class="detail-item step">
+            <div v-for="(recipe, index) in selectedRecipe.steps" :key="index" class="detail-item step">
                 <div>{{ recipe }}</div>
             </div>
     
@@ -22,17 +22,10 @@
 </template>
 
 <script setup>
-import { resultData } from '@/services/dummydata';
 import { usePageStore } from '../stores/PageStore';
-import { computed } from 'vue';
 
 const store = usePageStore(); 
-
-const recipeDetail = computed(() => {
-    return resultData.find(recipe => recipe.recipeTitle === store.selectedRecipeName); 
-});
-
-console.log()
+const selectedRecipe = store.pageData;
 </script>
 
 <style scoped>

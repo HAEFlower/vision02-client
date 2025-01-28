@@ -6,18 +6,23 @@
         </div>
     
         <div class="content">
-            <TopBar />
-            <ContentPage />
+            <TopBar @tabStatus="updateTabName"/>
+            <SelectOptionPage />
         </div>
     </div>
 </template>
 
 <script setup>
+import { useTabStore } from '@/stores/TabStore';
 import TopBar from '@/components/TopBar.vue'
 import logo from '@/assets/ramen-logo.svg'
-import ContentPage from './ContentPage.vue';
+import SelectOptionPage from './SelectOptionPage.vue';
 
+const tabStore = useTabStore(); 
 
+const updateTabName = (newTabName) => {
+    tabStore.updateTabName(newTabName); 
+}
 </script>
 
 <style scoped>

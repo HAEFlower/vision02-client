@@ -32,13 +32,19 @@ const selectedPurposeLabel = ref(null);
 
 const clickTypeLabel = (label) => {
     selectedTypeLabel.value = label;
+    emit('selected', { selectedTypeLabel: label, selectedPurposeLabel: selectedPurposeLabel.value });
     console.log(selectedTypeLabel.value);
 }
 
 const clickPurposeLabel = (label) => {
     selectedPurposeLabel.value = label;
+    emit('selected', { selectedTypeLabel: selectedTypeLabel.value, selectedPurposeLabel: label });
     console.log(selectedPurposeLabel.value);
 }
+
+const emit = defineEmits(["selected"]); 
+
+
 </script>
 
 <style scoped>
