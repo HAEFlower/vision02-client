@@ -35,7 +35,6 @@ const recipe = store.pageData.recipes.find(item => item.recipeTitle === props.re
 const goToRecipeDetailPage = () => {
     store.setCurrentPage('RECIPE_DETAIL', recipe); 
     store.selectedRecipeName = props.recipeName;
-    console.log("recipe::", recipe)
     router.push('/recipe-detail');
 
 }
