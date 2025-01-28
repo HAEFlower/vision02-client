@@ -3,11 +3,13 @@ import { defineStore } from 'pinia'
 export const usePageStore = defineStore('page', {
   state: () => ({
     currentPage: 'SELECT_OPTION',
-    selectedRecipeName: '',
+    pageData: null,
+    selectedRecipeName: null,
   }),
   actions: {
-    setCurrentPage(page) {
+    setCurrentPage(page, data) {
       this.currentPage = page
+      this.pageData = data
     },
     getCurrentRoute() {
       switch (this.currentPage) {
