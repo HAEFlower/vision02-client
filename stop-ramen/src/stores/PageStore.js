@@ -4,12 +4,17 @@ export const usePageStore = defineStore('page', {
   state: () => ({
     currentPage: 'SELECT_OPTION',
     pageData: null,
+    detailData: null,
     selectedRecipeName: null,
   }),
   actions: {
     setCurrentPage(page, data) {
       this.currentPage = page
-      this.pageData = data
+      if (page == 'AI_RESULT') {
+        this.pageData = data
+      } else {
+        this.detailData = data
+      }
     },
     getCurrentRoute() {
       switch (this.currentPage) {

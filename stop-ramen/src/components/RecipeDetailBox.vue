@@ -25,7 +25,7 @@
 import { usePageStore } from '../stores/PageStore';
 
 const store = usePageStore(); 
-const selectedRecipe = store.pageData;
+const selectedRecipe = store.detailData;
 </script>
 
 <style scoped>
