@@ -16,6 +16,10 @@ export const usePageStore = defineStore('page', {
         this.detailData = data
       }
     },
+    resetData() {
+      this.pageData = null
+      this.detailData = null
+    },
     getCurrentRoute() {
       switch (this.currentPage) {
         case 'AI_RESULT':

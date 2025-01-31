@@ -11,13 +11,15 @@
 
 <script setup>
 import { ref, defineEmits } from "vue";
+import { usePageStore } from "../stores/PageStore";
 
 const emit = defineEmits(["tabStatus"]);
 const tabName = ref("refrigeratorAI");
+const store = usePageStore();
 const setTab = (name) => {
     tabName.value = name;
+    store.resetData();
     emit("tabStatus", tabName.value);
-
 }
 </script>
 

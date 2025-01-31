@@ -24,7 +24,8 @@ const store = usePageStore();
 const router = useRouter();
 
 const goBack = () => {
-    router.back(); 
+    router.back();
+    store.currentPage = "SELECT_OPTION";
 }
 
 const recipeData = store.pageData.recipes; 
